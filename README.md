@@ -1,8 +1,12 @@
 # tecRacer CloudWatch Logs Scan Directory
 
+## Background
+
+AWS CloudWatch Agent doesn't allow specifying directories for Log Extraction. A seperate configuration is needed per file.
+
 ## Description
 
-This tool automatically scans specified directories and creates CloudWatch log streams for each file matching defined patterns. It is managed as a systemd service that ensures it’s running continuously, restarting on failure, and starting during system boots.
+This tool automatically scans specified directories and creates CloudWatch log streams for each file matching defined patterns. It is managed as a systemd service that ensures it runs automatically whenever the CloudWatch Agent is started.
 
 ## Installation
 
