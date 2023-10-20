@@ -15,7 +15,7 @@ cp "$PYTHON_SCRIPT" "$CONFIG_FILE" "$APP_DIRECTORY"
 # Creating the systemd service file
 echo "[Unit]
 Description=tecRacer CloudWatch Logs Scan Directory
-After=amazon-cloudwatch-agent.service
+Before=amazon-cloudwatch-agent.service
 
 [Service]
 Type=simple
