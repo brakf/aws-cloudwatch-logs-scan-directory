@@ -19,7 +19,7 @@ After=amazon-cloudwatch-agent.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 $APP_DIRECTORY/$PYTHON_SCRIPT $APP_DIRECTORY/$CONFIG_FILE
+ExecStart=/usr/bin/python3 $APP_DIRECTORY/$PYTHON_SCRIPT --config $APP_DIRECTORY/$CONFIG_FILE
 Restart=on-failure
 
 [Install]
