@@ -32,7 +32,7 @@ mv "$SERVICE_FILE" "/etc/systemd/system/"
 systemctl daemon-reload
 
 # Enabling the service to start on boot
-systemctl enable $SERVICE_FILE"
+systemctl enable "$SERVICE_FILE"
 
 # Printing success message
 echo "tecRacer CloudWatch Logs Scan Directory has been installed and configured successfully!"
