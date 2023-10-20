@@ -4,5 +4,6 @@
         "dev_w*"
     ],
     "log_group": "your_log_group",
-    "log_stream_pattern": "your_log_stream_pattern"
+    "log_stream_pattern": "your_log_stream_pattern",
+    "cloudwatch_config_file": "/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.d/directory_scan.json"
 }

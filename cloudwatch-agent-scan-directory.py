@@ -8,6 +8,7 @@ def generate_cw_config(config):
         directory = config['directory']
         patterns = config['patterns']
         log_group = config['log_group']
+        cloudwatch_config_file = config['cloudwatch_config_file']
         log_stream_pattern = config['log_stream_pattern']
         
         # Check if the directory exists
@@ -38,7 +39,7 @@ def generate_cw_config(config):
             }
         }
         
-        with open("cloudwatch_config.json", "w") as file:
+        with open(cloudwatch_config_file, "w") as file:
             json.dump(cw_config_content, file, indent=4)
             
     except KeyError as e:
