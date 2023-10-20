@@ -1,0 +1,8 @@
+{
+    "directory": "./test_dir",
+    "patterns": [
+        "dev_w*"
+    ],
+    "log_group": "your_log_group",
+    "log_stream_pattern": "your_log_stream_pattern"
+}

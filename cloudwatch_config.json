@@ -1,0 +1,20 @@
+{
+    "logs": {
+        "logs_collected": {
+            "files": {
+                "collect_list": [
+                    {
+                        "file_path": "./test_dir/dev_w0",
+                        "log_group_name": "your_log_group",
+                        "log_stream_name": "your_log_stream_pattern/dev_w0"
+                    },
+                    {
+                        "file_path": "./test_dir/dev_w1",
+                        "log_group_name": "your_log_group",
+                        "log_stream_name": "your_log_stream_pattern/dev_w1"
+                    }
+                ]
+            }
+        }
+    }
+}

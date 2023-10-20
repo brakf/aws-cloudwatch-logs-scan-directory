@@ -1,0 +1,11 @@
+[Unit]
+Description=CloudWatch Logs Scan Directory
+After=amazon-cloudwatch-agent.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/bin/my_app_script
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
