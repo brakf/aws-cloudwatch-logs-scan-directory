@@ -51,3 +51,10 @@ This tool automatically scans specified directories and creates CloudWatch log s
 4. **Verify that the service and files are removed:**
    - Check that the service is no longer listed in the systemd services.
    - Confirm the removal of the application directory and its contents.
+
+
+## How Log Rotation is handled
+
+The current version of the tool will add an asterisk behind the log name OR at the location of the first "."
+This is to properly handle log rotation as described here: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-Configuration-File-Details.html#CloudWatch-Agent-Configuration-File-Logssection
+
