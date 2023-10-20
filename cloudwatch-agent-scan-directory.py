@@ -17,17 +17,24 @@ def generate_cw_config(config):
             return
         
         config_entries = []
+        seen_files = set()  # Set to keep track of unique filenames
         
         for root, dirnames, filenames in os.walk(directory):
             for pattern in patterns:
                 for filename in fnmatch.filter(filenames, pattern):
-                    filepath = os.path.join(root, filename)
-                    entry = {
-                        "file_path": filepath,
-                        "log_group_name": log_group,
-                        "log_stream_name": f"{log_stream_pattern}/{filename}"
-                    }
-                    config_entries.append(entry)
+                    short_filename = filename.split('.', 1)[0]  # Get the filename without the extension
+                    modified_filename = short_filename + "*"  # Modify filename
+                    if modified_filename not in seen_files:  # Check for uniqueness
+                        filepath = os.path.join(root, filename)
+                        modified_filepath = os.path.join(root, modified_filename)  # Modify filepath
+                        entry = {
+                            "file_path": modified_filepath,
+                            "log_group_name": log_group,
+                            "log_stream_name": f"{log_stream_pattern}/{short_filename}"
+                        }
+                        config_entries.append(entry)
+                        seen_files.add(modified_filename)  # Add the modified filename to the set
+
                     
         cw_config_content = {
             "logs": {
@@ -63,3 +70,4 @@ if __name__ == "__main__":
         print(f"Error: Configuration file '{args.config}' not found.")
     except json.JSONDecodeError:
         print(f"Error: Failed to decode JSON in configuration file '{args.config}'.")
+
